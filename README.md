@@ -43,9 +43,11 @@ Setup guide for Vagrant, VirtualBox and Ruby in this [link](https://github.com/k
 `
 - nano provision.sh, and inside:
 
+````bash
 #!/bin/bash
 
 sudo apt-get update -y
+````
 
 - chmod permission 700 400 u x w r `sudo chmod +x provision.sh
 `
@@ -65,6 +67,8 @@ x execute
 ### Let's run the tests on our hosts machine and pass the tests by installing the required dependencies
 
 ### Let's automate the installation of required dependecies in our vagrant file to run our script
+
+Automation describes a wide range of technologies that reduce human intervention in processes.
 
 - add shell script path to our Vagrantfile
 - `config.vm.provision "shell", path: "environment/provision.sh"`
@@ -92,6 +96,7 @@ sudo apt-get install nodejs -y
 # install npm with pm2 -g
 sudo npm install pm2 -g
 ```
+
 ### Linux variables and Env var
 
 - How can we check the existing env variable in our system `env` `printenv`.
@@ -99,6 +104,13 @@ sudo npm install pm2 -g
 - As key=value, key="some other value"
 - Key = value1:value2
 - What are the system default env variables `USER`,`HOME`,`PATH`, `TERM`
+
+### Reverse Proxy with NGINX
+
+- What is the default location of our NGINX file that loads the NGINX page:
+- `cd /etc/nginx/sites-available/`
+- `nano /etc/nginx/sites-available/default` : we have here the configuration of the reverse proxing.
+- We need to use the default file in the same location to add our code to use it as our reverse proxy.
 
 ## Activity
 
